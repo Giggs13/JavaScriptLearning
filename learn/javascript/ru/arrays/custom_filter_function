@@ -1,0 +1,19 @@
+const arr = [1, 2, 3];
+const filteredArr1 = arr.filter(value => value % 2 === 0);
+console.log(filteredArr1);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Array.prototype.map = function (predicateFn) {
+    let retVal = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (predicateFn(this[i])) {
+            retVal.push(this[i]);
+        }
+    }
+
+    return retVal;
+};
+
+const filteredArr2 = arr.map(value => value % 2 === 0);
+console.log(filteredArr2);

@@ -1,0 +1,17 @@
+const arr = [1, 2, 3];
+const mappedArr1 = arr.map(value => value + 1);
+console.log(mappedArr1);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Array.prototype.map = function (projectionFn) {
+    let retVal = [];
+
+    for (let i = 0; i < this.length; i++) {
+        retVal.push(projectionFn(this[i]));
+    }
+
+    return retVal;
+};
+
+const mappedArr2 = arr.map(value => value + 1);
+console.log(mappedArr2);
